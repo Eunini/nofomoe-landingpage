@@ -16,12 +16,12 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="p-2 relative min-h-[600px] rounded rounded-xl flex items-center justify-start overflow-hidden bg-[url('/Union.png')] bg-cover bg-center">
+      <section className="p-1 relative min-h-[600px] rounded rounded-xl flex items-center justify-start overflow-hidden bg-[url('/Union.png')] bg-cover bg-center">
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-40" />
 
         {/* Hero Content Container */}
-        <div className="relative z-10 text-white px-4 sm:px-6 md:px-8 lg:px-16 w-full sm:max-w-4xl absolute left-0 pl-6">
+        <div className="relative sm:py-10 py-3 z-10 text-white px-4 sm:px-6 md:px-8 lg:px-16 w-full sm:max-w-4xl absolute left-0 pl-6">
           <div className="bg-black sm:py-10 py-3 border-0 rounded-2xl bg-opacity-70 shadow-lg p-6 md:p-10 lg:p-16 py-20">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to NOFOMOE</h1>
             <p className="text-base sm:text-lg md:text-xl opacity-90 mb-6">
@@ -40,9 +40,9 @@ export default function Home() {
 
       <FeatureSection />
       {/* About Us Section */}
-<section className="w-full py-16 relative p-1">
+<section className="w-full py-16 relative ">
   {/* Pink Background - Only visible on larger screens */}
-  <div className="absolute top-0 right-0 md:w-1/3 md:h-1/2 w-1/2 h-1/4 bg-pink-100 rounded-bl-3xl z-0" />
+  <div className="absolute top-0 right-0 md:w-1/3 md:h-1/2 w-1/2 h-1/4 bg-pink-100 rounded-md z-0" />
 
   <div className="container mx-auto px-4 relative z-10">
     <div className="text-sm text-gray-600 mb-2">ABOUT US</div>
