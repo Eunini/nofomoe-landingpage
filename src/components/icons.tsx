@@ -1,4 +1,5 @@
-import { type LightbulbIcon as LucideProps, Star } from "lucide-react"
+import type { LucideProps } from "lucide-react";
+import { Star } from "lucide-react";
 
 export function SearchIcon({ className = "" }: { className?: string }) {
   return (
