@@ -1,11 +1,18 @@
+"use client"
+import { useState } from "react"
+import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { NavLink } from "@/components/ui/nav-link"
+import { Menu, X } from "lucide-react"
 
 export function SiteHeader() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <header className="sticky top-0 z-50 w-full border-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+    <header className="sticky top-0 z-[9999] w-full bg-white ">
+      <div className="container flex h-14 items-center justify-between">
+        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
             <svg
@@ -22,26 +29,81 @@ export function SiteHeader() {
               <path d="M8 14L12 10L16 14" />
             </svg>
           </div>
-          <span className="font-bold">NOFOMOE</span>
+          <span className="font-bold text-lg text-black">NOFOMOE</span>
         </Link>
-        <nav className="ml-6 flex items-center space-x-4 lg:space-x-6">
-          <NavLink href="/" active>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          <NavLink href="/" active className="text-blue">
             HOME
           </NavLink>
-          <NavLink href="/about">ABOUT US</NavLink>
-          <NavLink href="/courses">COURSES</NavLink>
+          <NavLink href="/about" className="text-black">ABOUT US</NavLink>
+          <NavLink href="/courses" className="text-black">COURSES</NavLink>
         </nav>
-        <div className="ml-auto flex items-center space-x-4">
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
           <Button variant="ghost" asChild>
             <Link href="/sign-in">Sign In</Link>
           </Button>
-          |
           <Button asChild>
             <Link href="/sign-up">Sign Up</Link>
           </Button>
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-6 h-6 text-black" /> : <Menu className="w-6 h-6 text-black" />}
+        </button>
       </div>
+
+      {/* Mobile Navigation (Animated) */}
+      <motion.nav
+        initial={{ x: "100%" }}
+        animate={{ x: isOpen ? "0%" : "100%" }}
+        transition={{ type: "tween", duration: 0.3 }}
+        className={`fixed top-0 right-0 h-full w-64 bg-black/90 backdrop-blur-lg shadow-xl p-6 flex flex-col space-y-6 md:hidden ${
+          isOpen ? "block" : "hidden"
+        }`}
+      >
+        {/* Close Button */}
+        <button
+          className="absolute top-4 right-4 text-white"
+          onClick={() => setIsOpen(false)}
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        {/* Mobile Links */}
+        <div onClick={() => setIsOpen(false)}>
+          <NavLink href="/" className="text-white">
+            HOME
+          </NavLink>
+        </div>
+        <div onClick={() => setIsOpen(false)}>
+          <NavLink href="/about" className="text-white">
+            ABOUT US
+          </NavLink>
+        </div>
+        <div onClick={() => setIsOpen(false)}>
+          <NavLink href="/courses" className="text-white">
+            COURSES
+          </NavLink>
+        </div>
+
+        {/* Mobile Buttons */}
+        <div className="mt-auto flex flex-col space-y-3">
+          <Button variant="ghost" asChild className="text-white border-white/30">
+            <Link href="/sign-in">Sign In</Link>
+          </Button>
+          <Button asChild className="bg-green-500 text-white">
+            <Link href="/sign-up">Sign Up</Link>
+          </Button>
+        </div>
+      </motion.nav>
     </header>
   )
 }
-

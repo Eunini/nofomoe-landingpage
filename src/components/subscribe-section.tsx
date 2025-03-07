@@ -8,13 +8,15 @@ export function SubscribeSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white">Subscribe & Get Update on New Courses</h2>
-          <div className="flex gap-2 max-w-md mx-auto">
+          <div className="flex gap-2 max-w-md mx-auto flex-col lg:flex-row">
             <Input
               type="email"
               placeholder="Enter your email"
               className="bg-[#1A1644] border-0 text-white placeholder:text-gray-400"
             />
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white whitespace-nowrap">Subscribe Now</Button>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white whitespace-nowrap">
+              Subscribe Now
+            </Button>
           </div>
         </div>
       </div>
@@ -30,7 +32,7 @@ export function SubscribeSection() {
             }}
           >
             <Image
-              src="/placeholder.svg?height=50&width=50"
+              src="/Union.png?height=50&width=50"
               alt={`Profile ${i + 1}`}
               width={50}
               height={50}

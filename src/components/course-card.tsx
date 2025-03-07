@@ -34,7 +34,7 @@ export function CourseCard({
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden">
       <div className="relative">
-        <Image src={image || "/placeholder.svg"} alt={title} width={400} height={200} className="w-full object-cover" />
+        <Image src={image || "/banner2.png"} alt={title} width={400} height={200} className="w-full object-cover" />
         {onSale && (
           <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">SALE</div>
         )}

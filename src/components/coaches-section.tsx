@@ -9,7 +9,7 @@ export function CoachesSection() {
           <div className="relative">
             <div className="absolute inset-0 bg-coral-500/20 rounded-full transform -translate-x-1/4" />
             <Image
-              src="/placeholder.svg?height=400&width=400"
+              src="/Union.png?height=400&width=400"
               alt="Crypto coach"
               width={400}
               height={400}

@@ -21,8 +21,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black bg-opacity-40" />
 
         {/* Hero Content Container */}
-        <div className="relative z-10 text-white px-4 sm:px-6 md:px-8 lg:px-16 w-full max-w-5xl rounded-4xl absolute left-0 pl-8">
-          <div className="bg-black bg-opacity-70 shadow-lg p-6 md:p-10 lg:p-16 py-20">
+        <div className="relative z-10 text-white px-4 sm:px-6 md:px-8 lg:px-16 w-full sm:max-w-4xl absolute left-0 pl-6">
+          <div className="bg-black sm:py-10 py-3 border-0 rounded-2xl bg-opacity-70 shadow-lg p-6 md:p-10 lg:p-16 py-20">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to NOFOMOE</h1>
             <p className="text-base sm:text-lg md:text-xl opacity-90 mb-6">
               Learn What You Love And Live For It. Find Out How To Leverage Resources That Will Help You Change Your
@@ -40,74 +40,83 @@ export default function Home() {
 
       <FeatureSection />
       {/* About Us Section */}
-      <section className="w-full py-16 relative">
-        <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-pink-100 rounded-bl-3xl z-0" />
+<section className="w-full py-16 relative">
+  {/* Pink Background - Only visible on larger screens */}
+  <div className="hidden md:block absolute top-0 right-0 md:w-1/3 md:h-1/2 w-1/2 h-1/4 bg-pink-100 rounded-bl-3xl z-0" />
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-sm text-gray-600 mb-2">ABOUT US</div>
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="text-sm text-gray-600 mb-2">ABOUT US</div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="relative bg-blue-500 rounded-3xl p-">
-          {/* Blue Background Positioned at Bottom-Left */}
-          <div className="absolute -bottom-6 -left-6 w-3/4 h-3/4 overflow-hidden bg-blue-500 rounded-3xl z-0"></div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      {/* Video Section */}
+      <div className="relative rounded-3xl">
+        {/* Blue Background - Adjusted for responsiveness */}
+        <div className="absolute -bottom-6 -left-6 w-2/3 h-1/2 sm:h-2/3 md:w-3/4 md:h-3/4 overflow-hidden bg-blue-500 rounded-xl z-0"></div>
+        {/* Video Player with responsive thumbnail */}
+        <div className="relative z-10 rounded-3xl overflow-hidden">
+          <VideoPlayer 
+            thumbnailUrl="/banner2.png?height=400&width=600" 
+            videoUrl="#" 
+            className="w-full h-auto object-cover"
+          />
+        </div>
 
-          {/* Video Player on Top */}
-          <div className="relative z-10 rounded-3xl overflow-hidden">
-            <VideoPlayer thumbnailUrl="/placeholder.svg?height=400&width=600" videoUrl="#" />
-          </div>
-          <div className="flex justify-center mt-4">
-                <div className="flex space-x-1">
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className={`h-2 w-2 rounded-full ${i === 0 ? "bg-white" : "bg-white/50"}`} />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-blue-600">
-                What We Do At
-                <br />
-                NOFOMOE
-              </h2>
-
-              <div className="space-y-4">
-                <p className="text-gray-700">
-                  At NOFOMOE we understand the gap between you and the knowledge of crypto. We will bridge this gap.
-                </p>
-
-                <p className="text-gray-700">
-                  We are pleased to help you earn from your knowledge of crypto while learning the ropes. You will learn
-                  skills that will help you earn from crypto like thousands of people just like you are already doing.
-                </p>
-
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1 mt-1">
-                      <div className="bg-blue-600 rounded-full w-2 h-2" />
-                    </div>
-                    <p className="text-gray-700">
-                      Connect with educators and become an educator through the crypto ecosystem.
-                    </p>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1 mt-1">
-                      <div className="bg-blue-600 rounded-full w-2 h-2" />
-                    </div>
-                    <p className="text-gray-700">
-                      Prompt conversation and collaboration within your community of learners and earners and help you
-                      achieve more.
-                    </p>
-                  </div>
-                </div>
-
-                <Button className="bg-blue-700 hover:bg-blue-800 text-white rounded-md px-6">Learn more</Button>
-              </div>
-            </div>
+        {/* Indicator Dots */}
+        <div className="flex justify-center mt-4">
+          <div className="flex space-x-1">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className={`h-2 w-2 rounded-full ${i === 0 ? "bg-white" : "bg-white/50"}`} />
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Text Content */}
+      <div className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-blue-600">
+          What We Do At
+          <br />
+          NOFOMOE
+        </h2>
+
+        <div className="space-y-4">
+          <p className="text-gray-700">
+            At NOFOMOE we understand the gap between you and the knowledge of crypto. We will bridge this gap.
+          </p>
+
+          <p className="text-gray-700">
+            We are pleased to help you earn from your knowledge of crypto while learning the ropes. You will learn
+            skills that will help you earn from crypto like thousands of people just like you are already doing.
+          </p>
+
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <div className="bg-blue-600 rounded-full p-1 mt-1">
+                <div className="bg-blue-600 rounded-full w-2 h-2" />
+              </div>
+              <p className="text-gray-700">
+                Connect with educators and become an educator through the crypto ecosystem.
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="bg-blue-600 rounded-full p-1 mt-1">
+                <div className="bg-blue-600 rounded-full w-2 h-2" />
+              </div>
+              <p className="text-gray-700">
+                Prompt conversation and collaboration within your community of learners and earners and help you
+                achieve more.
+              </p>
+            </div>
+          </div>
+
+          <Button className="bg-blue-700 hover:bg-blue-800 text-white rounded-md px-6">Learn more</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Learning Process Section */}
       <section className="w-full py-20 bg-gray-50">

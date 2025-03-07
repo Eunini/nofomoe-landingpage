@@ -25,7 +25,7 @@ export function CareerSection() {
               </div>
             </div>
             <Image
-              src="/placeholder.svg?height=400&width=500"
+              src="/banner.png?height=400&width=500"
               alt="Person working at desk"
               width={500}
               height={400}

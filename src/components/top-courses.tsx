@@ -19,7 +19,7 @@ const courses = [
     duration: 25,
     lessons: 54,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/Union.png?height=200&width=400",
     onSale: true,
   },
   {
@@ -32,7 +32,7 @@ const courses = [
     duration: 25,
     lessons: 54,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/banner2.png?height=200&width=400",
     onSale: false,
   },
   {
@@ -45,7 +45,7 @@ const courses = [
     duration: 25,
     lessons: 54,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/banner2.png?height=200&width=400",
     onSale: true,
   },
   {
@@ -58,7 +58,7 @@ const courses = [
     duration: 25,
     lessons: 54,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/banner.png?height=200&width=400",
     onSale: true,
   },
 ]

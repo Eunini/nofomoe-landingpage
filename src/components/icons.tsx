@@ -80,6 +80,5 @@ export function CertificateIcon({ className = "" }: { className?: string }) {
 
 export const Icons = {
   Star: (props: LucideProps) => <Star {...props} />,
-  // Add other icons as needed
 }
 
