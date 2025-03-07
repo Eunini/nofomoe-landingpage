@@ -12,11 +12,11 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col p-5">
+    <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] rounded rounded-xl flex items-center justify-start overflow-hidden bg-[url('/Union.png')] bg-cover bg-center">
+      <section className="p-2 relative min-h-[600px] rounded rounded-xl flex items-center justify-start overflow-hidden bg-[url('/Union.png')] bg-cover bg-center">
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-40" />
 
