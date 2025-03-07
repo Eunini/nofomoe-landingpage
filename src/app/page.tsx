@@ -40,9 +40,9 @@ export default function Home() {
 
       <FeatureSection />
       {/* About Us Section */}
-<section className="w-full py-16 relative">
+<section className="w-full py-16 relative p-1">
   {/* Pink Background - Only visible on larger screens */}
-  <div className="hidden md:block absolute top-0 right-0 md:w-1/3 md:h-1/2 w-1/2 h-1/4 bg-pink-100 rounded-bl-3xl z-0" />
+  <div className="absolute top-0 right-0 md:w-1/3 md:h-1/2 w-1/2 h-1/4 bg-pink-100 rounded-bl-3xl z-0" />
 
   <div className="container mx-auto px-4 relative z-10">
     <div className="text-sm text-gray-600 mb-2">ABOUT US</div>
