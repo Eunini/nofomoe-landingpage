@@ -47,9 +47,15 @@ export default function Home() {
           <div className="text-sm text-gray-600 mb-2">ABOUT US</div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="relative bg-blue-500 rounded-3xl p-4 overflow-hidden">
-              <VideoPlayer thumbnailUrl="/placeholder.svg?height=400&width=600" videoUrl="#" />
-              <div className="flex justify-center mt-4">
+            <div className="relative bg-blue-500 rounded-3xl p-">
+          {/* Blue Background Positioned at Bottom-Left */}
+          <div className="absolute -bottom-6 -left-6 w-3/4 h-3/4 overflow-hidden bg-blue-500 rounded-3xl z-0"></div>
+
+          {/* Video Player on Top */}
+          <div className="relative z-10 rounded-3xl overflow-hidden">
+            <VideoPlayer thumbnailUrl="/placeholder.svg?height=400&width=600" videoUrl="#" />
+          </div>
+          <div className="flex justify-center mt-4">
                 <div className="flex space-x-1">
                   {[...Array(8)].map((_, i) => (
                     <div key={i} className={`h-2 w-2 rounded-full ${i === 0 ? "bg-white" : "bg-white/50"}`} />
