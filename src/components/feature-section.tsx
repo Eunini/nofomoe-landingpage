@@ -12,7 +12,7 @@ interface FeatureCardProps {
   buttonText: string
 }
 
-function FeatureCard({ title, description, imageSrc, buttonText }: FeatureCardProps) {
+function FeatureCard({ title, imageSrc, buttonText }: FeatureCardProps) {
   return (
     <div className="relative group overflow-hidden rounded-2xl shadow-lg">
       <Image
