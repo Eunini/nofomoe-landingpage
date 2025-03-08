@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect} from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -8,6 +8,13 @@ import { Menu, X } from "lucide-react"
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+  }, [isOpen])
 
   return (
     <header className="sticky top-0 z-[9999] w-full bg-white ">
@@ -33,7 +40,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center sm:space-x-6">
           <NavLink href="/" active className="text-blue">
             HOME
           </NavLink>
@@ -42,7 +49,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Desktop Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center sm:space-x-4">
           <Button variant="ghost" asChild>
             <Link href="/sign-in">Sign In</Link>
           </Button>
@@ -53,7 +60,7 @@ export function SiteHeader() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="md:hidden py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-6 h-6 text-black" /> : <Menu className="w-6 h-6 text-black" />}
@@ -65,10 +72,11 @@ export function SiteHeader() {
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? "0%" : "100%" }}
         transition={{ type: "tween", duration: 0.3 }}
-        className={`fixed top-0 right-0 h-full w-64 bg-black/90 backdrop-blur-lg shadow-xl p-6 flex flex-col space-y-6 md:hidden ${
+        className={`fixed top-0 left-0 h-screen w-screen bg-black/90 backdrop-blur-lg shadow-xl p-6 flex flex-col space-y-6 md:hidden ${
           isOpen ? "block" : "hidden"
         }`}
       >
+        
         {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-white"

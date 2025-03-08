@@ -12,11 +12,11 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-hidden">
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="p-1 relative min-h-[600px] rounded rounded-xl flex items-center justify-start overflow-hidden bg-[url('/Union.png')] bg-cover bg-center">
+      <section className="py-1 relative min-h-[600px] rounded rounded-xl flex items-center justify-start overflow-hidden bg-[url('/Union.png')] bg-cover bg-center">
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-40" />
 
@@ -206,8 +206,8 @@ export default function Home() {
 
       <CareerSection />
       <CoachesSection />
-      <SubscribeSection />
       <TopCourses />
+      <SubscribeSection />
     </div>
   )
 }
